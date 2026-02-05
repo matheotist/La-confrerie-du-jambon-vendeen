@@ -34,7 +34,7 @@ body{
   display:flex;
   align-items:center;
   gap:14px;
-  min-width:14;
+  min-width:0;
 }
 
 .header-right img{
