@@ -13,6 +13,7 @@ body{
 
 /* ===== HEADER ===== */
 .header{
+  backdrop-filter: blur(6px);
   position:sticky;
   top:0;
   z-index:1000;
@@ -55,10 +56,12 @@ body{
 }
 
 .header nav{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(4, auto);
+  grid-auto-flow:row;
   justify-content:center;
-  flex-wrap:wrap;   /* autorise retour à la ligne propre */
-  gap:22px;
+  gap:14px 26px;   /* ligne / colonne */
+  text-align:center;
 }
 
 .header nav a{
