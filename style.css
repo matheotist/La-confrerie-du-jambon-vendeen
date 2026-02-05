@@ -394,3 +394,57 @@ body{
   color: inherit;
   display: block;
 }
+
+/* ===== TECH ACCORDION ===== */
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.tech-item{
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.tech-btn{
+  width:100%;
+  background:none;
+  border:none;
+  padding:26px;
+  font-size:16px;
+  font-weight:600;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  transition:0.3s;
+}
+
+.tech-btn:hover{
+  background:#f7f7f7;
+}
+
+.tech-desc{
+  max-height:0;
+  overflow:hidden;
+  padding:0 26px;
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+  transition:0.4s ease;
+}
+
+.tech-item.active .tech-desc{
+  max-height:200px;
+  padding:0 26px 22px;
+}
+
+.tech-item.active .tech-btn{
+  background:#fafafa;
+}
