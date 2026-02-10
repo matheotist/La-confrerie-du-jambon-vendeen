@@ -529,3 +529,22 @@ body{
   border-bottom: 2px solid #f3a7b5; /* option rose cochon */
   z-index: 1000;
 }
+
+/* ===== NAVIGATION ADAPTATIVE ===== */
+.header nav {
+  display: flex;           /* switch grid → flex pour wrapping */
+  flex-wrap: wrap;         /* permet de passer sur plusieurs lignes si nécessaire */
+  justify-content: center; /* centrer horizontalement */
+  gap: 14px 26px;          /* espace entre boutons */
+}
+
+.header nav a {
+  white-space: nowrap;     /* empêche un lien d’aller sur plusieurs lignes */
+  flex: 0 1 auto;          /* laisse le lien se rétrécir si besoin */
+}
+
+@media(max-width:600px){
+  .header nav a{
+    font-size:13px;
+  }
+}
