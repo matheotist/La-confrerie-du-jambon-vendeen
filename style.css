@@ -1,361 +1,394 @@
-/* ================================================= */
-/* ============ RESET / BASE ====================== */
-/* ================================================= */
-* {
-  margin: 0;                /* Supprime les marges par défaut */
-  padding: 0;               /* Supprime les paddings par défaut */
-  box-sizing: border-box;   /* Inclut padding et border dans la largeur/hauteur */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif; /* Police moderne */
-  background: #fdf6f3;                /* Fond chaud, thème cochon */
-  color: #111;                         /* Couleur texte principale */
-  line-height: 1.6;                    /* Hauteur de ligne confortable */
+body{
+  font-family:'Poppins', sans-serif;
+  background:#fafafa;
+  color:#111;
+  line-height:1.6;
 }
 
-/* ================================================= */
-/* ============ HEADER ============================ */
-/* ================================================= */
-.header {
-  position: sticky;          /* Fixe le header en haut quand on scroll */
-  top: 0;
-  width: 0vw;              /* Prend toute la largeur de la fenêtre */
-  margin: 0;
-  padding: 10px 40px;        /* Espacement interne */
-  display: flex;             /* Flexbox pour alignement simple */
-  justify-content: space-between; /* Logo à gauche, nav centré, image à droite */
-  align-items: center;
-  background: linear-gradient(90deg, #ffffff, #fdf0f3); /* Rose clair en fond */
-  border-bottom: 2px solid #f3a7b5;   /* Ligne rose en bas */
-  z-index: 1000;              /* Toujours au-dessus du contenu */
-  flex-wrap: wrap;             /* Permet à nav de passer sur plusieurs lignes */
+/* ===== HEADER ===== */
+.header{
+  backdrop-filter: blur(6px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid #eee;
 }
 
-/* Logo + texte à gauche */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;                  /* Espacement entre logo image et texte */
-  min-width: 0;               /* Permet de rétrécir si écran petit */
+.header{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  padding:10px 40px;
+  column-gap:40px;
+  max-width:1400px;
+  margin:0 auto;
 }
 
-/* Texte du logo */
-.logo {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-  max-width: 240px;           /* Limite la largeur pour ne pas déborder */
-  color: #5a2a32;             /* Couleur rose foncé */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
 }
 
-/* Image partenaire / à droite */
-.header-right img {
-  height: 48px;
-  width: auto;
+.header-right img{
+  height:48px;
+  width:auto;
 }
 
-/* ================================================= */
-/* ============ NAVIGATION ======================== */
-/* ================================================= */
-.header nav {
-  display: flex;          /* Flexible pour permettre wrapping */
-  flex-wrap: wrap;        /* Passage sur plusieurs lignes si besoin */
-  justify-content: center;/* Centrer horizontalement */
-  gap: 10px 20px;         /* Espacement horizontal et vertical */
-  flex: 1 1 auto;         /* Occupe tout l’espace disponible */
-  min-width: 0;           /* Permet au contenu de rétrécir */
+.header img{
+  width:70px;
+  height:auto;
 }
 
-.header nav a {
-  white-space: nowrap;    /* Chaque lien reste sur une seule ligne */
-  flex: 0 1 auto;         /* Peut se réduire si écran trop petit */
-  text-align: center;
-  font-size: 15px;
-  font-weight: 500;
-  color: #5a2a32;         /* Texte rose foncé */
-  text-decoration: none;
-  position: relative;     /* Nécessaire pour ::after */
+.logo{
+  font-size:20px;
+  font-weight:600;
+  line-height:1.2;
+  max-width:240px;
 }
 
-.header nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #e88a9a;    /* Soulignement rose clair */
-  transition: 0.3s;       /* Animation smooth */
+.header nav{
+  display:grid;
+  grid-template-columns:repeat(4, auto);
+  grid-auto-flow:row;
+  justify-content:center;
+  gap:14px 26px;   /* ligne / colonne */
+  text-align:center;
 }
 
-.header nav a:hover::after {
-  width: 100%;            /* Soulignement complet au hover */
+.header nav a{
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  font-size:15px;
+  position:relative;
+  white-space:nowrap;
 }
 
-/* Ajustement pour petits écrans */
-@media (max-width: 600px) {
-  .header nav a {
-    font-size: 13px;      /* Texte légèrement plus petit sur mobile */
+.header nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#111;
+  transition:0.3s;
+}
+
+.header nav a:hover::after{
+  width:100%;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:100px 60px 60px;
+  background:linear-gradient(180deg,#ffffff,#f5f5f5);
+}
+
+.hero h2{
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:600px;
+  font-size:18px;
+  color:#555;
+}
+
+/* ===== EQUIPE ===== */
+#equipe{
+  padding:80px 60px;
+  background:#fff;
+}
+
+#equipe h2{
+  font-size:36px;
+  margin-bottom:50px;
+}
+
+.team-container{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:30px;
+}
+
+.team-card{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.4s;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.team-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.team-card h3{
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.team-role{
+  font-size:13px;
+  color:#888;
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.team-desc{
+  font-size:14px;
+  color:#555;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;
+  padding:30px;
+  background:#111;
+  color:#fff;
+  margin-top:80px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+  .team-container{
+    grid-template-columns:repeat(3,1fr);
   }
-  .header {
-    padding: 10px 20px;   /* Réduit padding horizontal sur petits écrans */
+}
+
+@media(max-width:800px){
+  .header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .hero h2{
+    font-size:34px;
+  }
+
+  .team-container{
+    grid-template-columns:repeat(1,1fr);
   }
 }
 
-/* ================================================= */
-/* ============ HERO ============================== */
-/* ================================================= */
-.hero {
-  padding: 100px 60px 60px;          /* Haut, gauche/droite, bas */
-  background: linear-gradient(180deg, #ffffff, #fce4ea); /* Fond rose clair */
+/* ===== SPONSORS ===== */
+.sponsors{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
 }
 
-.hero h2 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #5a2a32;   /* Titre rose foncé */
+.sponsors img{
+  height:50px;
+  width:auto;
+  transition:0.3s;
 }
 
-.hero p {
-  max-width: 600px;  /* Limite la largeur du paragraphe */
-  font-size: 18px;
-  color: #6b3b44;    /* Texte légèrement plus chaud */
+.sponsors a:hover img{
+  filter:grayscale(0%);
+  opacity:1;
+  transform:scale(1.05);
+}
+/* ===== SECTIONS GÉNÉRIQUES ===== */
+.section{
+  padding:80px 60px;
+  background:#fff;
 }
 
-/* ================================================= */
-/* ============ SECTIONS GENERIQUES ============== */
-/* ================================================= */
-.section,
-#equipe {
-  padding: 80px 60px;
-  background: #fff;
+.section.grey{
+  background:#f5f5f5;
 }
 
-.section.grey {
-  background: #fcebef; /* Variante rose clair */
+.section h2{
+  font-size:36px;
+  margin-bottom:20px;
 }
 
-.section h2,
-#equipe h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #5a2a32;       /* Titres rose foncé */
+.section-desc{
+  max-width:700px;
+  color:#555;
+  margin-bottom:50px;
+  font-size:17px;
 }
 
-.section-desc {
-  max-width: 700px;
-  color: #555;
-  margin-bottom: 50px;
-  font-size: 17px;
+/* ===== VOITURE ===== */
+.car-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
 }
 
-/* ================================================= */
-/* ============ TEAM ============================== */
-/* ================================================= */
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+.car-text ul{
+  list-style:none;
 }
 
-.team-card {
-  background: linear-gradient(180deg,#ffffff,#fff5f7); /* Fond doux rose */
-  border: 1px solid #f3c0ca;     /* Bord rose clair */
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: 0.4s;
+.car-text li{
+  font-size:18px;
+  margin-bottom:15px;
 }
 
-.team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(232,138,154,0.25); /* Hover rose */
+.car-image img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.team-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
+/* ===== TECH ===== */
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
-.team-card h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
+.tech-card{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:500;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
 }
 
-.team-role {
-  font-size: 13px;
-  color: #c85c6f; /* Rose moyen */
-  font-weight: 500;
-  margin-bottom: 10px;
+.tech-card:hover{
+  transform:translateY(-6px);
 }
 
-.team-desc {
-  font-size: 14px;
-  color: #555;
+/* ===== STAND ===== */
+.stand-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
-/* ================================================= */
-/* ============ VOITURE =========================== */
-/* ================================================= */
-.car-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+.stand-gallery img{
+  width:100%;
+  border-radius:16px;
+  height:260px;
+  object-fit:cover;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.car-text ul {
-  list-style: none;
+/* ===== CONTACT ===== */
+.contact-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
 }
 
-.car-text li {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #5a2a32; /* rose foncé */
+.contact-card{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.car-image img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.contact-card h3{
+  margin-bottom:10px;
 }
 
-/* ================================================= */
-/* ============ TECH ============================== */
-/* ================================================= */
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .car-container,
+  .tech-grid,
+  .stand-gallery,
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+}
+/* ===== AUTRES ÉQUIPES ===== */
+.other-teams-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
 }
 
-.tech-card {
-  background: linear-gradient(180deg,#ffffff,#fff5f7);
-  border: 1px solid #f3c0ca;
-  padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-  font-weight: 500;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
-  color: #5a2a32;
+.other-team-card{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
 }
 
-.tech-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(232,138,154,0.25);
+.other-team-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
 
-/* ================================================= */
-/* ============ STAND ============================= */
-/* ================================================= */
-.stand-gallery {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+.other-team-card h3{
+  font-size:20px;
+  margin-bottom:6px;
 }
 
-.stand-gallery img {
-  width: 100%;
-  border-radius: 16px;
-  height: 260px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.other-team-projet{
+  font-size:14px;
+  color:#888;
+  margin-bottom:12px;
+  font-weight:500;
 }
 
-/* ================================================= */
-/* ============ AUTRES EQUIPES =================== */
-/* ================================================= */
-.other-teams-container {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
+.other-team-desc{
+  font-size:15px;
+  color:#555;
+  margin-bottom:20px;
 }
 
-.other-team-card {
-  background: linear-gradient(180deg,#ffffff,#fff5f7);
-  border: 1px solid #f3c0ca;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
+.other-team-links{
+  display:flex;
+  gap:15px;
 }
 
-.other-team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(232,138,154,0.25);
+.other-team-links a{
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  color:#111;
+  border:1px solid #ddd;
+  padding:6px 12px;
+  border-radius:20px;
+  transition:0.3s;
 }
 
-.other-team-card h3 {
-  font-size: 20px;
-  margin-bottom: 6px;
-  color: #5a2a32;
+.other-team-links a:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 
-.other-team-projet {
-  font-size: 14px;
-  color: #c85c6f;
-  margin-bottom: 12px;
-  font-weight: 500;
+/* Responsive */
+@media(max-width:900px){
+  .other-teams-container{
+    grid-template-columns:1fr;
+  }
 }
-
-.other-team-desc {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.other-team-links {
-  display: flex;
-  gap: 15px;
-}
-
-.other-team-links a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #5a2a32;
-  border: 1px solid #e88a9a;
-  padding: 6px 12px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.other-team-links a:hover {
-  background: #e88a9a;
-  color: #fff;
-  border-color: #e88a9a;
-}
-
-/* ================================================= */
-/* ============ CONTACT =========================== */
-/* ================================================= */
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
-}
-
-.contact-card {
-  background: linear-gradient(180deg,#ffffff,#fff5f7);
-  border: 1px solid #f3c0ca;
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.contact-card h3 {
-  margin-bottom: 10px;
-  color: #c85c6f;
-}
-
 .contact-link {
   text-decoration: none;
   color: inherit;
@@ -363,62 +396,190 @@ body {
 }
 
 /* ================================================= */
-/* ============ SPONSORS ========================== */
+/* ============ THEME COCHON / IDENTITÉ VISUELLE ===== */
 /* ================================================= */
-.sponsors {
-  display: flex;
-  justify-content: center;
+
+/* Fond général légèrement chaud */
+body{
+  background:#fdf6f3;
+}
+
+/* ===== HEADER ===== */
+.header{
+  background:linear-gradient(90deg, #ffffff, #fdf0f3);
+  border-bottom:2px solid #f3a7b5;
+}
+
+/* Liens navigation */
+.header nav a{
+  color:#5a2a32;
+}
+
+.header nav a::after{
+  background:#e88a9a;
+}
+
+/* Logo texte */
+.logo{
+  color:#5a2a32;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(180deg,#fff,#fce4ea);
+}
+
+.hero h2{
+  color:#5a2a32;
+}
+
+.hero p{
+  color:#6b3b44;
+}
+
+/* ===== SECTIONS ===== */
+.section h2,
+#equipe h2{
+  color:#5a2a32;
+}
+
+.section.grey{
+  background:#fcebef;
+}
+
+/* ===== CARTES (général) ===== */
+.team-card,
+.tech-card,
+.other-team-card,
+.contact-card{
+  border:1px solid #f3c0ca;
+  background:linear-gradient(180deg,#ffffff,#fff5f7);
+}
+
+/* Hover cartes */
+.team-card:hover,
+.tech-card:hover,
+.other-team-card:hover{
+  box-shadow:0 15px 35px rgba(232,138,154,0.25);
+}
+
+/* ===== TEAM ===== */
+.team-role{
+  color:#c85c6f;
+}
+
+/* ===== VOITURE ===== */
+.car-text li{
+  color:#5a2a32;
+}
+
+/* ===== TECH ===== */
+.tech-card{
+  color:#5a2a32;
+}
+
+/* ===== AUTRES ÉQUIPES ===== */
+.other-team-projet{
+  color:#c85c6f;
+}
+
+.other-team-links a{
+  border-color:#e88a9a;
+  color:#5a2a32;
+}
+
+.other-team-links a:hover{
+  background:#e88a9a;
+  color:#fff;
+  border-color:#e88a9a;
+}
+
+/* ===== CONTACT ===== */
+.contact-card h3{
+  color:#c85c6f;
+}
+
+/* ===== SPONSORS ===== */
+.sponsors img{
+  filter:grayscale(20%);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:linear-gradient(90deg,#5a2a32,#c85c6f);
+}
+
+.footer p{
+  color:#fff;
+}
+
+/* ===== HEADER FULL WIDTH GARANTI ===== */
+.header {
+  position: sticky; /* garde le sticky */
+  top: 0;
+  width: 100vw;     /* 100% de la largeur de la fenêtre */
+  max-width: 100vw; /* annule l'ancien max-width */
+  margin: 0;        /* annule le margin auto */
+  padding: 10px 40px; /* garde ton padding */
+  display: grid;    /* reste grid */
+  grid-template-columns: auto 1fr auto;
+  column-gap: 40px;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  background: linear-gradient(90deg, #ffffff, #fdf0f3); /* option rose cochon */
+  border-bottom: 2px solid #f3a7b5; /* option rose cochon */
+  z-index: 1000;
 }
 
-.sponsors img {
-  height: 50px;
-  width: auto;
-  transition: 0.3s;
-  filter: grayscale(20%);
+/* ===== NAVIGATION ADAPTATIVE ===== */
+.header nav {
+  display: flex;           /* switch grid → flex pour wrapping */
+  flex-wrap: wrap;         /* permet de passer sur plusieurs lignes si nécessaire */
+  justify-content: center; /* centrer horizontalement */
+  gap: 14px 26px;          /* espace entre boutons */
 }
 
-.sponsors a:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
+.header nav a {
+  white-space: nowrap;     /* empêche un lien d’aller sur plusieurs lignes */
+  flex: 0 1 auto;          /* laisse le lien se rétrécir si besoin */
 }
 
-/* ================================================= */
-/* ============ FOOTER ============================ */
-/* ================================================= */
-.footer {
+/* ===== HEADER FULL WIDTH + NAV RESPONSIVE ===== */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 40px;
+  background: linear-gradient(90deg, #ffffff, #fdf0f3);
+  border-bottom: 2px solid #f3a7b5;
+  z-index: 1000;
+}
+
+/* Nav full width de la colonne centrale */
+.header nav {
+  display: flex;          /* flexible pour wrapping */
+  flex-wrap: wrap;        /* permet 2 lignes si besoin */
+  justify-content: center;/* centrer les boutons */
+  width: 100%;            /* occupe toute la largeur dispo */
+  gap: 10px 20px;         /* ajuster l'espacement horizontal et vertical */
+}
+
+/* Chaque lien reste sur une seule ligne */
+.header nav a {
+  white-space: nowrap;
+  flex: 0 1 auto;         /* chaque lien peut rétrécir un peu */
   text-align: center;
-  padding: 30px;
-  background: linear-gradient(90deg,#5a2a32,#c85c6f);
-  color: #fff;
-  margin-top: 80px;
+  font-size: 15px;        /* taille standard */
 }
 
-/* ================================================= */
-/* ============ RESPONSIVE ======================== */
-/* ================================================= */
-@media (max-width: 1200px) {
-  .team-container {
-    grid-template-columns: repeat(3,1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .car-container,
-  .tech-grid,
-  .stand-gallery,
-  .contact-container,
-  .other-teams-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero h2 {
-    font-size: 34px;
+/* Option : réduire légèrement la police sur mobile */
+@media(max-width:600px){
+  .header nav a{
+    font-size:13px;
   }
 }
