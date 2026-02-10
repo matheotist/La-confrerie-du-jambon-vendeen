@@ -401,68 +401,168 @@ body{
   margin: auto;
 }
 
-.section {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+/* ================================================= */
+/* ================ RESPONSIVE GLOBAL =============== */
+/* ================================================= */
 
-/* Tablette */
-@media screen and (max-width: 1024px) {
-  .section {
-    flex-direction: column;
+/* ===== HEADER ===== */
+@media(max-width:1000px){
+  .header{
+    grid-template-columns:1fr;
+    row-gap:15px;
+    text-align:center;
+  }
+
+  .header-left{
+    justify-content:center;
+  }
+
+  .header nav{
+    grid-template-columns:repeat(2, auto);
+    gap:12px 20px;
+  }
+
+  .header-right{
+    display:flex;
+    justify-content:center;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 22px;
+@media(max-width:600px){
+  .header nav{
+    grid-template-columns:1fr;
   }
 
-  .menu {
-    flex-direction: column;
+  .logo{
+    font-size:16px;
+    max-width:100%;
   }
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* Tablette */
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+  .header img{
+    width:55px;
   }
 }
 
-/* Mobile */
-@media (max-width: 500px) {
-  .cards {
-    grid-template-columns: 1fr;
+/* ===== HERO ===== */
+@media(max-width:800px){
+  .hero{
+    padding:60px 25px;
+  }
+
+  .hero h2{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:16px;
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== EQUIPE ===== */
+@media(max-width:1200px){
+  .team-container{
+    grid-template-columns:repeat(3,1fr);
+  }
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+@media(max-width:800px){
+  .team-container{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+@media(max-width:500px){
+  .team-container{
+    grid-template-columns:1fr;
+  }
+
+  .team-card img{
+    height:200px;
+  }
 }
 
-.col {
-  flex: 1 1 300px;
+/* ===== VOITURE ===== */
+@media(max-width:900px){
+  .car-container{
+    grid-template-columns:1fr;
+  }
+
+  .car-text li{
+    font-size:16px;
+  }
+}
+
+/* ===== TECH ===== */
+@media(max-width:900px){
+  .tech-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:500px){
+  .tech-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== STAND ===== */
+@media(max-width:900px){
+  .stand-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .stand-gallery img{
+    height:220px;
+  }
+}
+
+/* ===== AUTRES ÉQUIPES ===== */
+@media(max-width:1000px){
+  .other-teams-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .other-teams-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== CONTACT ===== */
+@media(max-width:900px){
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== SECTIONS ===== */
+@media(max-width:700px){
+  .section{
+    padding:60px 25px;
+  }
+
+  .section h2{
+    font-size:28px;
+  }
+
+  .section-desc{
+    font-size:16px;
+  }
+}
+
+/* ===== FOOTER / SPONSORS ===== */
+@media(max-width:600px){
+  .sponsors{
+    gap:20px;
+  }
+
+  .sponsors img{
+    height:40px;
+  }
+
+  .footer{
+    font-size:13px;
+    padding:25px 15px;
+  }
 }
