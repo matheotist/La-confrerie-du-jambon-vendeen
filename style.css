@@ -62,7 +62,7 @@ body {
   display: flex;          /* Flexible pour permettre wrapping */
   flex-wrap: wrap;        /* Passage sur plusieurs lignes si besoin */
   justify-content: center;/* Centrer horizontalement */
-  gap: 10px 20px;         /* Espacement horizontal et vertical */
+  gap: 14px 26px;         /* Espacement horizontal et vertical */
   flex: 1 1 auto;         /* Occupe tout l’espace disponible */
   min-width: 0;           /* Permet au contenu de rétrécir */
 }
@@ -94,14 +94,7 @@ body {
 }
 
 /* Ajustement pour petits écrans */
-@media (max-width: 600px) {
-  .header nav a {
-    font-size: 13px;      /* Texte légèrement plus petit sur mobile */
-  }
-  .header {
-    padding: 10px 20px;   /* Réduit padding horizontal sur petits écrans */
-  }
-}
+
 
 /* ================================================= */
 /* ============ HERO ============================== */
