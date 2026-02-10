@@ -394,3 +394,121 @@ body{
   color: inherit;
   display: block;
 }
+
+/* ================================================= */
+/* ============ THEME COCHON / IDENTITÉ VISUELLE ===== */
+/* ================================================= */
+
+/* Fond général légèrement chaud */
+body{
+  background:#fdf6f3;
+}
+
+/* ===== HEADER ===== */
+.header{
+  background:linear-gradient(90deg, #ffffff, #fdf0f3);
+  border-bottom:2px solid #f3a7b5;
+}
+
+/* Liens navigation */
+.header nav a{
+  color:#5a2a32;
+}
+
+.header nav a::after{
+  background:#e88a9a;
+}
+
+/* Logo texte */
+.logo{
+  color:#5a2a32;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(180deg,#fff,#fce4ea);
+}
+
+.hero h2{
+  color:#5a2a32;
+}
+
+.hero p{
+  color:#6b3b44;
+}
+
+/* ===== SECTIONS ===== */
+.section h2,
+#equipe h2{
+  color:#5a2a32;
+}
+
+.section.grey{
+  background:#fcebef;
+}
+
+/* ===== CARTES (général) ===== */
+.team-card,
+.tech-card,
+.other-team-card,
+.contact-card{
+  border:1px solid #f3c0ca;
+  background:linear-gradient(180deg,#ffffff,#fff5f7);
+}
+
+/* Hover cartes */
+.team-card:hover,
+.tech-card:hover,
+.other-team-card:hover{
+  box-shadow:0 15px 35px rgba(232,138,154,0.25);
+}
+
+/* ===== TEAM ===== */
+.team-role{
+  color:#c85c6f;
+}
+
+/* ===== VOITURE ===== */
+.car-text li{
+  color:#5a2a32;
+}
+
+/* ===== TECH ===== */
+.tech-card{
+  color:#5a2a32;
+}
+
+/* ===== AUTRES ÉQUIPES ===== */
+.other-team-projet{
+  color:#c85c6f;
+}
+
+.other-team-links a{
+  border-color:#e88a9a;
+  color:#5a2a32;
+}
+
+.other-team-links a:hover{
+  background:#e88a9a;
+  color:#fff;
+  border-color:#e88a9a;
+}
+
+/* ===== CONTACT ===== */
+.contact-card h3{
+  color:#c85c6f;
+}
+
+/* ===== SPONSORS ===== */
+.sponsors img{
+  filter:grayscale(20%);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:linear-gradient(90deg,#5a2a32,#c85c6f);
+}
+
+.footer p{
+  color:#fff;
+}
