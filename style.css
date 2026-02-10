@@ -513,23 +513,19 @@ body{
   color:#fff;
 }
 
-/* ===== HEADER FULL WIDTH ===== */
-.header{
-  max-width:100% !important;
-  width:100%;
-  margin:0;
-  padding-left:40px;
-  padding-right:40px;
-}
-
-.header{
-  width:100%;
-  max-width:100%;
-  margin:0;
-}
-
-.header > *{
-  max-width:1400px;
-  margin:0 auto;
-  width:100%;
+/* ===== HEADER FULL WIDTH GARANTI ===== */
+.header {
+  position: sticky; /* garde le sticky */
+  top: 0;
+  width: 100vw;     /* 100% de la largeur de la fenêtre */
+  max-width: 100vw; /* annule l'ancien max-width */
+  margin: 0;        /* annule le margin auto */
+  padding: 10px 40px; /* garde ton padding */
+  display: grid;    /* reste grid */
+  grid-template-columns: auto 1fr auto;
+  column-gap: 40px;
+  align-items: center;
+  background: linear-gradient(90deg, #ffffff, #fdf0f3); /* option rose cochon */
+  border-bottom: 2px solid #f3a7b5; /* option rose cochon */
+  z-index: 1000;
 }
