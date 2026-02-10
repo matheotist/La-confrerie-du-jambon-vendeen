@@ -21,7 +21,7 @@ body {
   position: sticky;          /* Fixe le header en haut quand on scroll */
   top: 0;
   width: 0vw;              /* Prend toute la largeur de la fenêtre */
-  margin: 0;
+  margin: 0 auto;
   padding: 10px 40px;        /* Espacement interne */
   display: flex;             /* Flexbox pour alignement simple */
   justify-content: space-between; /* Logo à gauche, nav centré, image à droite */
@@ -94,7 +94,14 @@ body {
 }
 
 /* Ajustement pour petits écrans */
-
+@media (max-width: 600px) {
+  .header nav a {
+    font-size: 13px;      /* Texte légèrement plus petit sur mobile */
+  }
+  .header {
+    padding: 10px 20px;   /* Réduit padding horizontal sur petits écrans */
+  }
+}
 
 /* ================================================= */
 /* ============ HERO ============================== */
