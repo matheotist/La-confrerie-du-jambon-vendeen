@@ -543,6 +543,41 @@ body{
   flex: 0 1 auto;          /* laisse le lien se rétrécir si besoin */
 }
 
+/* ===== HEADER FULL WIDTH + NAV RESPONSIVE ===== */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 40px;
+  background: linear-gradient(90deg, #ffffff, #fdf0f3);
+  border-bottom: 2px solid #f3a7b5;
+  z-index: 1000;
+}
+
+/* Nav full width de la colonne centrale */
+.header nav {
+  display: flex;          /* flexible pour wrapping */
+  flex-wrap: wrap;        /* permet 2 lignes si besoin */
+  justify-content: center;/* centrer les boutons */
+  width: 100%;            /* occupe toute la largeur dispo */
+  gap: 10px 20px;         /* ajuster l'espacement horizontal et vertical */
+}
+
+/* Chaque lien reste sur une seule ligne */
+.header nav a {
+  white-space: nowrap;
+  flex: 0 1 auto;         /* chaque lien peut rétrécir un peu */
+  text-align: center;
+  font-size: 15px;        /* taille standard */
+}
+
+/* Option : réduire légèrement la police sur mobile */
 @media(max-width:600px){
   .header nav a{
     font-size:13px;
