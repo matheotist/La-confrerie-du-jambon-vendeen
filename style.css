@@ -178,6 +178,12 @@ body{
   }
 }
 
+@media(max-width:800px){
+  .header{
+    flex-direction:column;
+    gap:15px;
+  }
+
   .hero h2{
     font-size:34px;
   }
@@ -185,6 +191,7 @@ body{
   .team-container{
     grid-template-columns:repeat(1,1fr);
   }
+}
 
 /* ===== SPONSORS ===== */
 .sponsors{
@@ -392,170 +399,4 @@ body{
   width: 90%;
   max-width: 1200px;
   margin: auto;
-}
-
-/* ================================================= */
-/* ================ RESPONSIVE GLOBAL =============== */
-/* ================================================= */
-
-/* ===== HEADER ===== */
-@media(max-width:1000px){
-  .header{
-    grid-template-columns:1fr;
-    row-gap:15px;
-    text-align:center;
-  }
-
-  .header-left{
-    justify-content:center;
-  }
-
-  .header nav{
-    grid-template-columns:repeat(2, auto);
-    gap:12px 20px;
-  }
-
-  .header-right{
-    display:flex;
-    justify-content:center;
-  }
-}
-
-@media(max-width:600px){
-  .header nav{
-    grid-template-columns:1fr;
-  }
-
-  .logo{
-    font-size:16px;
-    max-width:100%;
-  }
-
-  .header img{
-    width:55px;
-  }
-}
-
-/* ===== HERO ===== */
-@media(max-width:800px){
-  .hero{
-    padding:60px 25px;
-  }
-
-  .hero h2{
-    font-size:30px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-}
-
-/* ===== EQUIPE ===== */
-@media(max-width:1200px){
-  .team-container{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-@media(max-width:800px){
-  .team-container{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:500px){
-  .team-container{
-    grid-template-columns:1fr;
-  }
-
-  .team-card img{
-    height:200px;
-  }
-}
-
-/* ===== VOITURE ===== */
-@media(max-width:900px){
-  .car-container{
-    grid-template-columns:1fr;
-  }
-
-  .car-text li{
-    font-size:16px;
-  }
-}
-
-/* ===== TECH ===== */
-@media(max-width:900px){
-  .tech-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:500px){
-  .tech-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ===== STAND ===== */
-@media(max-width:900px){
-  .stand-gallery{
-    grid-template-columns:1fr;
-  }
-
-  .stand-gallery img{
-    height:220px;
-  }
-}
-
-/* ===== AUTRES ÉQUIPES ===== */
-@media(max-width:1000px){
-  .other-teams-container{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:600px){
-  .other-teams-container{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ===== CONTACT ===== */
-@media(max-width:900px){
-  .contact-container{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ===== SECTIONS ===== */
-@media(max-width:700px){
-  .section{
-    padding:60px 25px;
-  }
-
-  .section h2{
-    font-size:28px;
-  }
-
-  .section-desc{
-    font-size:16px;
-  }
-}
-
-/* ===== FOOTER / SPONSORS ===== */
-@media(max-width:600px){
-  .sponsors{
-    gap:20px;
-  }
-
-  .sponsors img{
-    height:40px;
-  }
-
-  .footer{
-    font-size:13px;
-    padding:25px 15px;
-  }
 }
