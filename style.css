@@ -20,7 +20,7 @@ body {
 .header {
   position: sticky;          /* Fixe le header en haut quand on scroll */
   top: 0;
-  width: 100vw;              /* Prend toute la largeur de la fenêtre */
+  width: 0vw;              /* Prend toute la largeur de la fenêtre */
   margin: 0;
   padding: 10px 40px;        /* Espacement interne */
   display: flex;             /* Flexbox pour alignement simple */
