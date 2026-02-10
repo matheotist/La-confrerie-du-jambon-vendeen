@@ -14,30 +14,32 @@ body {
   line-height: 1.6;                    /* Hauteur de ligne confortable */
 }
 
-/* ================================================= */
-/* ============ HEADER ============================ */
-/* ================================================= */
+/* ============ HEADER CORRIGÉ ============ */
 .header {
-  position: sticky;          /* Fixe le header en haut quand on scroll */
+  position: sticky;
   top: 0;
-  width: 0vw;              /* Prend toute la largeur de la fenêtre */
-  margin: 0 auto;
-  padding: 10px 40px;        /* Espacement interne */
-  display: flex;             /* Flexbox pour alignement simple */
-  justify-content: space-between; /* Logo à gauche, nav centré, image à droite */
+  width: 100vw;
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo / nav / image */
   align-items: center;
-  background: linear-gradient(90deg, #ffffff, #fdf0f3); /* Rose clair en fond */
-  border-bottom: 2px solid #f3a7b5;   /* Ligne rose en bas */
-  z-index: 1000;              /* Toujours au-dessus du contenu */
-  flex-wrap: wrap;             /* Permet à nav de passer sur plusieurs lignes */
+  column-gap: 40px;
+  background: linear-gradient(90deg, #ffffff, #fdf0f3);
+  border-bottom: 2px solid #f3a7b5;
+  z-index: 1000;
 }
 
-/* Logo + texte à gauche */
+/* Logo + texte */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 14px;                  /* Espacement entre logo image et texte */
-  min-width: 0;               /* Permet de rétrécir si écran petit */
+  gap: 14px;
+  min-width: 0;
+}
+
+.header-left img {
+  width: 60px;  /* taille raisonnable */
+  height: auto;
 }
 
 /* Texte du logo */
@@ -45,37 +47,37 @@ body {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
-  max-width: 240px;           /* Limite la largeur pour ne pas déborder */
-  color: #5a2a32;             /* Couleur rose foncé */
+  color: #5a2a32;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Image partenaire / à droite */
+/* Image à droite */
 .header-right img {
   height: 48px;
   width: auto;
 }
 
-/* ================================================= */
-/* ============ NAVIGATION ======================== */
-/* ================================================= */
+/* Nav */
 .header nav {
-  display: flex;          /* Flexible pour permettre wrapping */
-  flex-wrap: wrap;        /* Passage sur plusieurs lignes si besoin */
-  justify-content: center;/* Centrer horizontalement */
-  gap: 14px 26px;         /* Espacement horizontal et vertical */
-  flex: 1 1 auto;         /* Occupe tout l’espace disponible */
-  min-width: 0;           /* Permet au contenu de rétrécir */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* pour que ça passe sur 2 lignes si trop petit */
+  gap: 14px 26px;  /* espace horizontal / vertical */
+  align-items: center; /* aligne verticalement les liens */
 }
 
 .header nav a {
-  white-space: nowrap;    /* Chaque lien reste sur une seule ligne */
-  flex: 0 1 auto;         /* Peut se réduire si écran trop petit */
-  text-align: center;
+  white-space: nowrap; /* chaque lien reste sur une ligne */
+  flex: 0 1 auto;
   font-size: 15px;
   font-weight: 500;
-  color: #5a2a32;         /* Texte rose foncé */
+  color: #5a2a32;
   text-decoration: none;
-  position: relative;     /* Nécessaire pour ::after */
+  text-align: center;
+  line-height: 1.5; /* ajuste hauteur pour que tous les liens soient alignés */
 }
 
 .header nav a::after {
@@ -85,21 +87,26 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #e88a9a;    /* Soulignement rose clair */
-  transition: 0.3s;       /* Animation smooth */
+  background: #e88a9a;
+  transition: 0.3s;
 }
 
 .header nav a:hover::after {
-  width: 100%;            /* Soulignement complet au hover */
+  width: 100%;
 }
 
-/* Ajustement pour petits écrans */
-@media (max-width: 600px) {
-  .header nav a {
-    font-size: 13px;      /* Texte légèrement plus petit sur mobile */
+/* Petit écran */
+@media(max-width: 600px){
+  .header-left img {
+    width: 50px;
   }
-  .header {
-    padding: 10px 20px;   /* Réduit padding horizontal sur petits écrans */
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .header nav a {
+    font-size: 13px;
   }
 }
 
