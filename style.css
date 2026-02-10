@@ -512,3 +512,24 @@ body{
 .footer p{
   color:#fff;
 }
+
+/* ===== HEADER FULL WIDTH ===== */
+.header{
+  max-width:100% !important;
+  width:100%;
+  margin:0;
+  padding-left:40px;
+  padding-right:40px;
+}
+
+.header{
+  width:100%;
+  max-width:100%;
+  margin:0;
+}
+
+.header > *{
+  max-width:1400px;
+  margin:0 auto;
+  width:100%;
+}
