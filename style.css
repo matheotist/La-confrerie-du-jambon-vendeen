@@ -681,3 +681,54 @@ body{
     font-size:17px;
   }
 }
+
+/* ===== IMAGE CLICK ZOOM ===== */
+img{
+  cursor: zoom-in;
+}
+
+/* Overlay */
+#img-modal{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Image zoomée */
+#img-modal-content{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 0 40px rgba(255,255,255,0.15);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Bouton fermer */
+#img-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+  font-weight:300;
+}
+
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.8);}
+  to{transform:scale(1);}
+}
