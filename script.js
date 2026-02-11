@@ -28,3 +28,11 @@ document.addEventListener("keydown", (e) => {
     modal.style.display = "none";
   }
 });
+
+// Toutes les images zoomables
+document.querySelectorAll("img.zoomable").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
