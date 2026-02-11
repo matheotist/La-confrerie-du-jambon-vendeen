@@ -4,11 +4,6 @@
   box-sizing:border-box;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 body{
   font-family:'Poppins', sans-serif;
   background:#fdf6f3;
@@ -32,6 +27,11 @@ body{
   column-gap: 20px;
   background:linear-gradient(90deg, #ffffff, #fdf0f3);
   border-bottom:2px solid #f3a7b5;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header-left{
