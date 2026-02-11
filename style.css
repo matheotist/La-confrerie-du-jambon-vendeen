@@ -631,3 +631,53 @@ body{
     padding:25px 15px;
   }
 }
+
+/* ===== COURSE EN COURS ===== */
+.course-section{
+  padding:60px 20px;
+  background:linear-gradient(180deg,#fff,#fce4ea);
+}
+
+.course-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.course-image img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  object-fit:cover;
+}
+
+.course-text h2{
+  font-size:28px;
+  color:#5a2a32;
+  margin-bottom:15px;
+}
+
+.course-text p{
+  font-size:16px;
+  color:#6b3b44;
+  line-height:1.7;
+}
+
+/* Responsive tablette+ */
+@media(min-width:900px){
+  .course-container{
+    grid-template-columns:1fr 1.2fr; /* image gauche / texte droite */
+    gap:50px;
+  }
+
+  .course-text h2{
+    font-size:34px;
+  }
+
+  .course-text p{
+    font-size:17px;
+  }
+}
