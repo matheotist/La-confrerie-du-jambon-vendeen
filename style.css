@@ -683,7 +683,7 @@ body{
 }
 
 /* ===== IMAGE CLICK ZOOM ===== */
-img{
+img.zoomable{
   cursor: zoom-in;
 }
 
