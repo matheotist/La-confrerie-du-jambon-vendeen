@@ -1,6 +1,6 @@
-const modal = document.getElementById("img.zoomable");
-const modalImg = document.getElementById("img-modal.zoomable");
-const closeBtn = document.getElementById("img.zoomable");
+const modal = document.getElementById("img-modal");
+const modalImg = document.getElementById("img-modal-content");
+const closeBtn = document.getElementById("img-close");
 
 // Toutes les images zoomables
 document.querySelectorAll("img.zoomable").forEach(img => {
@@ -15,7 +15,7 @@ closeBtn.onclick = () => {
   modal.style.display = "none";
 };
 
-// Fermer en cliquant en dehors
+// Fermer en cliquant en dehors de l'image
 modal.onclick = (e) => {
   if(e.target === modal){
     modal.style.display = "none";
