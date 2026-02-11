@@ -1,6 +1,6 @@
-const modal = document.getElementById("img-modal");
-const modalImg = document.getElementById("img-modal-content");
-const closeBtn = document.getElementById("img-close");
+const modal = document.getElementById("img.zoomable");
+const modalImg = document.getElementById("img-modal.zoomable");
+const closeBtn = document.getElementById("img.zoomable");
 
 // Toutes les images zoomables
 document.querySelectorAll("img.zoomable").forEach(img => {
