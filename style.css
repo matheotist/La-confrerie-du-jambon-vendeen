@@ -568,7 +568,7 @@ body{
 /* GRAND DESKTOP (1200px et plus) */
 @media(min-width:1200px){
   .team-container{
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(6,1fr);
   }
   
   .team-card img{
